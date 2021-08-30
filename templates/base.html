@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/main.css')}}">
+    <title>RBB</title>
+</head>
+<body>
+<div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">
+            <img src="{{url_for('static',filename='images/rohit_away.jpg')}}" alt="" width="150" height="200">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a class="nav-link" href="/faceapp/">FaceApp</a>
+              <a class="nav-link" href="/imageclassifier/">Image Classifier</a>
+              <a class="nav-link" href="/about/">About Me</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+</div>
+
+
+{% block body %}
+
+
+{% endblock %}
+
+
+
+<footer class="footer" >
+   <div class="container">
+            <footer >
+                Developed by <a href="https://www.linkedin.com/in/rohitbankar/" >Rohit Bankar</a>
+            </footer>
+        </div>
+</footer>
+<style>
+    .footer{
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    
+</style>
+
+
+
+
+
+
+</body>
+</html>

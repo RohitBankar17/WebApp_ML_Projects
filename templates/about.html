@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<br>
+<br>
+<div class="container" id=myrow>
+    <h3 style="position: relative;">About Website </h3>
+    <p>
+        I am currently pursuing my BTech in Mechanical Engineering from the Indian Institue of Technology, Indore. I am a tech enthusiast and a passionate learner; hence I have explored many different technologies in different emerging areas apart from my core branch. The one that interests me the most is the ever-evolving and dynamic field of Machine Learning and Artificial Intelligence which has the potential to change the trajectory of the advancement of human race. Therefore, I have tried to understand the field and hence done some courses and projects in the area. 
+        I have created this website to showcase some of my machine learning projects using programming from scratch. I have made this website happen using python libraries like numpy, pandas,sklearn, etc. The webpage development was done in HTML and CSS on the frontend and was integrated with python code using flask in the backend.
+    </p>
+</div>
+<br>
+<br>
+<br>
+<div class="container" id =mybio>
+    <h5 style="position: relative;">Link to my accounts-</h5>
+    <a href="https://www.linkedin.com/in/rohitbankar/" > <img src="{{url_for('static',filename='images/linkedin.png')}}" alt="" style="margin: 5px 10px 40px 30px;" width="60" height="50"></a>
+    <a href="https://github.com/RohitBankar17"  > <img src="{{url_for('static',filename='images/github.png')}}" alt=""  style="margin: 5px 10px 40px 30px;" width="60" height="50"></a>
+    <a href="https://www.facebook.com/profile.php?id=100005615115888" ><img src="{{url_for('static',filename='images/facebook.png')}}" alt="" style="margin: 5px 10px 40px 30px;" width="60" height="50"></a>
+   
+    
+</div>
+<style>
+    #myrow{
+        background-color:#D8D8D8;
+    }
+    #mybio{
+        background-color: aliceblue;
+        color: blue;
+    }
+
+</style>
+{% endblock  %}

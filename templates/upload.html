@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<br>
+
+<div class="container" id="myrow">
+    <p>
+        This app uses Stochastic Gradient descent algorithm trained in backend using Python.
+        <br>
+        <br>
+        This app will classify images. So if you upload an image it will give 
+        you most probable 5 categories with probability of which the image is of.
+        The images that can be uploaded are among- Human,Nature,Bear,Cat,Chicken,Cow,Deer,Dog,Duck,Eagle
+        ,Elephant,Lion,Monkey,Panda,Pigeon,Rabbit,Sheep,Tiger and Wolf. 
+    </p>
+    <br>
+    
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <p><b>Upload Images to Predict</b> </p>
+        </li>
+      </ul>
+
+      <!-- tab panes -->
+      <div class="tab-content">
+          <div class="tab-pane active" id="upload-image" role="tabpanel" aria-labelledby="uploadimg">
+              <div class="row">
+                  <div class="col">
+                      <form action="#" method="POST" enctype="multipart/form-data">
+                        <!-- file input -->
+                        <p>
+                            <input type="file" name="image_name" class="btn" style="background-color: #424242; color:azure" required>
+                        </p>
+                        <!-- Submit button -->
+                        <p>
+                            <input type="submit" value="submit" class="btn" style="background-color: #424242; color:azure">
+                        </p>
+
+                        <p align="center"> <strong>Intructions:</strong> <br>
+                            Only upload the file only with following extentions ".png", ".jpg", ".jpeg"
+                            
+                        </p>
+                    
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+</div>
+<br><br>
+{% if fileupload %}
+
+<div class="container" id='myrow_result'>
+    <div class="row">
+        <div class="col col-8">
+            <table>
+                <tr>
+                    <th><u>Category</th>
+                    <th><u>Confidence Score</th>
+                </tr>
+                {% for name,score in data.items() %}
+                    <tr>
+                        <td><b>{{ name }}</b></td>
+                        <td><b>{{ score }}</b></td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="col col-4">
+            <img src="/static/upload/{{ image_filename }}" alt="uploaded image" width="300" height="{{ height }}">
+
+        </div>
+    </div>
+</div>
+
+{% endif %}
+
+{% if extension %}
+    <div class="container" id=myrow_result>
+        <div class="row">
+            <p>Extension provided of the Image is incorrect </p>
+            <p>Make sure the image is of  the following extensions: ".png", ".jpg", ".jpeg" file format</p>
+
+        </div>
+
+    </div>
+
+{% endif %}
+
+
+<style>
+    #myrow{
+        background-color:whitesmoke;
+    }
+    #myrow_result{
+        background-color:grey;
+        padding: 5%;
+        align-content: center;
+    } 
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table, th, td{
+        border: 4px solid black;
+    }
+</style>
+
+
+
+{% endblock  %}

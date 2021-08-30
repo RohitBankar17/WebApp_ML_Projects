@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+<div class='container' id="do">
+    <br>
+    <h2 class=" content"> 
+      <span style="color:black">  Face Recognition Application</span>
+    </h2>
+    <p class="content">
+        This application detects the gender(male or female) with accuracy of prediction using pre-trained Support Vector machine Classifier.
+    </p>
+    <br>
+        <img src="{{url_for('static',filename='images/SVM.jpg')}}" style="margin-left: 42%;" alt="Rohit Bankar" height=200 width=200 class="cc">
+    <br>
+    <p class="content" >
+        <h5 align='center'> <b> You can try this by uploading an image below!!!!</b></h5>
+    </p>
+    <div align='center' >
+        <a href="{{url_for('gender')}}" class="btn btn-outline-primary">Try now</a>
+    </div>
+    
+
+
+</div>
+<style>
+    #do{
+        background-color: whitesmoke;
+    }
+</style>
+
+{%endblock%}
